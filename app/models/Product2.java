@@ -1,6 +1,8 @@
 package models;
 
-public class Product2 {
+import com.avaje.ebean.Model;
+
+public class Product2 extends Model{
 	public Long ean;
 	public String name;
 	public String description;
