@@ -28,13 +28,14 @@ public class Application extends Controller {
         item.warehouse = warehouse;
         warehouse.stock.add(item);
         
+        product.save();
+        item.save();
+        
         List<String> output = new LinkedList<String>();
         output.add(String.format("My warehouse is called '%s'", warehouse));
         output.add(String.format("It contains %d items", warehouse.stock.size()));
         output.add(String.format("The first is: %s", warehouse.stock.get(0)));
-        
-        product.save();
-        
+
         return ok(output.toString());
     }
 

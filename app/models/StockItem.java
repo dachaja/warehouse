@@ -1,7 +1,21 @@
 package models;
 
-public class StockItem {
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+
+import com.avaje.ebean.Model;
+
+@Entity
+public class StockItem extends Model{
+	
+	@Id
+	public Long id;
+	
+	@ManyToOne
 	public Warehouse warehouse;
+	
+	@ManyToOne
 	public Product2 product;
 	public Long quantity;
 	
