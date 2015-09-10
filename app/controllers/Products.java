@@ -23,11 +23,8 @@ public class Products extends Controller{
 	}
 	public Result show(Long ean) {
 		final Product product = Product.findByEan(ean);
-		StringBuilder sb = new StringBuilder();
-		Formatter fm = new Formatter(sb);
 		if(product == null) {
-			fm.format("Product %s does not exist.", ean);
-			return notFound(sb.toString());
+			return notFound(String.format("Product %s does not exist.", ean));
 		}
 		
 		Form<Product> filledForm = productForm.fill(product);
