@@ -33,6 +33,8 @@ public class Application extends Controller {
         output.add(String.format("It contains %d items", warehouse.stock.size()));
         output.add(String.format("The first is: %s", warehouse.stock.get(0)));
         
+        product.save();
+        
         return ok(output.toString());
     }
 
