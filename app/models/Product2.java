@@ -5,6 +5,7 @@ import javax.persistence.*;
 import com.avaje.ebean.Model;
 
 @Entity
+@Table(name="product2")
 public class Product2 extends Model{
 	@Id
 	public Long id;
@@ -12,7 +13,7 @@ public class Product2 extends Model{
 	public String name;
 	public String description;
 	
-	@OneToMany(mappedBy="product2")
+	@OneToMany
 	public List<StockItem> stockItems;
 	
 	@Override

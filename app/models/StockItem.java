@@ -3,10 +3,12 @@ package models;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 
 import com.avaje.ebean.Model;
 
 @Entity
+@Table(name="stockitem")
 public class StockItem extends Model{
 	
 	@Id
