@@ -6,8 +6,10 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 
+import com.avaje.ebean.Model;
+
 @Entity
-public class Employee {
+public class Employee extends Model{
 	@Id
 	public Long id;
 	

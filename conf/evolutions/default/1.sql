@@ -20,12 +20,12 @@ create table employee (
   constraint pk_employee primary key (id))
 ;
 
-create table product2 (
+create table product (
   id                        bigint not null,
   ean                       bigint,
   name                      varchar(255),
   description               varchar(255),
-  constraint pk_product2 primary key (id))
+  constraint pk_product primary key (id))
 ;
 
 create table stockitem (
@@ -60,7 +60,7 @@ create sequence address_seq;
 
 create sequence employee_seq;
 
-create sequence product2_seq;
+create sequence product_seq;
 
 create sequence stockitem_seq;
 
@@ -68,7 +68,7 @@ create sequence warehouse_seq;
 
 alter table stockitem add constraint fk_stockitem_warehouse_1 foreign key (warehouse_id) references warehouse (id) on delete restrict on update restrict;
 create index ix_stockitem_warehouse_1 on stockitem (warehouse_id);
-alter table stockitem add constraint fk_stockitem_product_2 foreign key (product_id) references product2 (id) on delete restrict on update restrict;
+alter table stockitem add constraint fk_stockitem_product_2 foreign key (product_id) references product (id) on delete restrict on update restrict;
 create index ix_stockitem_product_2 on stockitem (product_id);
 alter table warehouse add constraint fk_warehouse_address_3 foreign key (address_id) references address (id) on delete restrict on update restrict;
 create index ix_warehouse_address_3 on warehouse (address_id);
@@ -93,7 +93,7 @@ drop table if exists employee;
 
 drop table if exists employee_warehouse;
 
-drop table if exists product2;
+drop table if exists product;
 
 drop table if exists stockitem;
 
@@ -107,7 +107,7 @@ drop sequence if exists address_seq;
 
 drop sequence if exists employee_seq;
 
-drop sequence if exists product2_seq;
+drop sequence if exists product_seq;
 
 drop sequence if exists stockitem_seq;
 

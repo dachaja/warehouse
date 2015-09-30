@@ -11,8 +11,10 @@ import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
+import com.avaje.ebean.Model;
+
 @Entity
-public class Warehouse{
+public class Warehouse extends Model{
 	@Id
 	public Long id;
 	public String name;
@@ -29,5 +31,11 @@ public class Warehouse{
 	@Override 
 	public String toString() {
 		return name;
+	}
+	
+	public static void addInit() {
+		Warehouse warehouse = new Warehouse();
+		warehouse.address = Address.addInit(warehouse);
+		warehouse.save();
 	}
 }
