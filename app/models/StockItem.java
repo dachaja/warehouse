@@ -34,7 +34,7 @@ public class StockItem extends Model{
 	
 	public static void addInit(Product pd, Warehouse wh) {
 		StockItem item = new StockItem();
-		item.quantity = 10L;
+		item.quantity = 310L;
 		item.product = pd;
 		item.warehouse = wh;
 		item.save();
