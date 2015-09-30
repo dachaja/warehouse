@@ -25,12 +25,33 @@ public class Product extends Model{
 		return name;
 	}
 	
-	public static void addInit() {
+	public static void addInit(Warehouse wh) {
 		Product pd = new Product();
 		pd.ean = 1L;
 		pd.name = "Blue Paperclip 01";
 		pd.description = "Blue Paperclip 01";
 		pd.save();
-		StockItem.addInit(pd);
+		StockItem.addInit(pd, wh);
+		
+		pd = new Product();
+		pd.ean = 2L;
+		pd.name = "Red Paperclip 01";
+		pd.description = "Red Paperclip 01";
+		pd.save();
+		StockItem.addInit(pd, wh);
+		
+		pd = new Product();
+		pd.ean = 3L;
+		pd.name = "Yellow Paperclip 01";
+		pd.description = "Yellow Paperclip 01";
+		pd.save();
+		StockItem.addInit(pd, wh);
+		
+		pd = new Product();
+		pd.ean = 4L;
+		pd.name = "Black Paperclip 01";
+		pd.description = "Black Paperclip 01";
+		pd.save();
+		StockItem.addInit(pd, wh);
 	}
 }

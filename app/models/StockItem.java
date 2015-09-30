@@ -32,10 +32,11 @@ public class StockItem extends Model{
 				id, quantity, product == null ? null : product.id);
 	}
 	
-	public static void addInit(Product pd) {
+	public static void addInit(Product pd, Warehouse wh) {
 		StockItem item = new StockItem();
 		item.quantity = 10L;
 		item.product = pd;
+		item.warehouse = wh;
 		item.save();
 	}
 }

@@ -1,6 +1,7 @@
 package controllers;
 
 import models.Product;
+import models.Warehouse;
 import play.mvc.Controller;
 import play.mvc.Result;
 
@@ -54,7 +55,9 @@ public class Application extends Controller {
 //    				.setMaxRows(10)
 //    				.findList();
 //    		return ok(items.toString());
-    		Product.addInit(); 
+    		Warehouse wh = Warehouse.addInit();
+    		Product.addInit(wh); 
+    		
     		return ok();
     }
 

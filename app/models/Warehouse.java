@@ -33,9 +33,13 @@ public class Warehouse extends Model{
 		return name;
 	}
 	
-	public static void addInit() {
+	public static Warehouse addInit() {
 		Warehouse warehouse = new Warehouse();
+		warehouse.name = "My Warehouse";
 		warehouse.address = Address.addInit(warehouse);
+		//warehouse.stock.add(item);
 		warehouse.save();
+		
+		return warehouse;
 	}
 }
