@@ -1,17 +1,22 @@
 package controllers;
 
 import java.util.List;
+
+import annotations.Catch;
 import models.StockItem;
 import play.mvc.Controller;
 import play.mvc.Result;
+import play.mvc.With;
 import views.html.*;
 
+@Catch
 public class Product extends Controller{
+	
 	public Result index() {
 		return redirect(routes.Product.list(1));
 	}
 	public Result list(int page) {
-		return ok();
+		return TODO;
 	}
 	public Result details(long ean) {
 		return TODO;
